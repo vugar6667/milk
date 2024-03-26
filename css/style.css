@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+}
+header .logo .sevilay {
+  max-width: 250px;
+  height: auto;
+}
+header .navmenu {
+  display: flex;
+}
+@media (max-width: 750px) {
+  header .navmenu {
+    display: none;
+  }
+}
+header .navmenu .lil .hom {
+  color: #2c2c2c;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: all 0.42s ease;
+}
+header .navmenu .lil .hom:hover {
+  color: #ee1c47;
+}
+header .nav-icon {
+  display: flex;
+  align-items: center;
+}
+header .nav-icon .icn {
+  margin-right: 20px;
+  color: #2c2c2c;
+  font-size: 25px;
+  font-weight: 400;
+  transition: all 0.42s ease;
+}
+header .nav-icon .icn:hover {
+  transform: scale(1.1);
+  color: #ee1c47;
+}
+header #menu-icon {
+  font-size: 35px;
+  color: #2c2c2c;
+  z-index: 10001;
+  cursor: pointer;
+}
+@media (min-width: 751px) {
+  header #menu-icon {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  header.open .navmenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #edfff1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 30px;
+    transition: all 0.42s;
+  }
+  header.open .navmenu .lil .hom {
+    display: block;
+    margin: 18px 0;
+  }
+}
+
+.main-home {
+  position: relative;
+  padding: 15% 10%;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/tirnak.jpg);
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  /* Overlay */
+}
+.main-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Beyaz overlay */
+}
+.main-home .main-text {
+  position: relative;
+  z-index: 1;
+}
+.main-home .main-text .hhh {
+  color: #ee1c47;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.main-home .main-text .hh {
+  color: #000;
+  font-size: 65px;
+  text-transform: capitalize;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 6px 0 10px;
+}
+.main-home .main-text .pp {
+  color: #333c56;
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.main-home .main-text .main-btn {
+  display: inline-block;
+  color: #111;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 2px solid #111;
+  padding: 12px 25px;
+  transition: all 0.42s ease;
+}
+.main-home .main-text .main-btn:hover {
+  background-color: palevioletred;
+  color: #fff;
+}
+
+header.sticky {
+  background: #fff;
+  padding: 2px 3%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*tranding secton scss*/
+.trending-product .center-text .tre {
+  color: #111;
+  font-size: 28px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.trending-product .center-text .tre .span {
+  color: #ee1c47;
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px 10%;
+}
+@media (min-width: 768px) {
+  .card-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .card-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card-section .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 60vh;
+}
+.card-section .card__image {
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  height: 100%;
+}
+.card-section .card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-section .card__image:hover img {
+    transform: scale(1.1);
+  }
+}
+@media (min-width: 1024px) {
+  .card-section .card:nth-child(n+3) {
+    grid-row: 2;
+  }
+}
+
+.client-reviews {
+  background-color: #f3f4f6;
+}
+.client-reviews .reviews {
+  text-align: center;
+}
+.client-reviews .reviews .has3 {
+  color: #111;
+  font-size: 25px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 700;
+}
+.client-reviews .reviews .cliee {
+  width: 100px;
+  height: auto;
+  border-radius: 50px;
+  margin: 10px 0;
+}
+.client-reviews .reviews .lorem {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.client-reviews .reviews .has2 {
+  font-size: 22px;
+  color: #000;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+.contact {
+  background-color: #f3f4f6;
+}
+.contact .contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+  gap: 3rem;
+}
+.contact .contact-info .first-info .contactimg {
+  width: 140px;
+  height: auto;
+}
+.contact .contact-info .first-info .social-icon .ah {
+  color: #565656;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 0.42s;
+}
+.contact .contact-info .hasss {
+  color: #212529;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.contact .contact-info .slk {
+  color: #565656;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.42s;
+}
+.contact .contact-info .slk:hover {
+  color: #ee1c47;
+}
+
+.end-text {
+  background-color: #edfff1;
+  text-align: center;
+  padding: 20px;
+}
+.end-text .kurme {
+  color: #111;
+  text-transform: capitalize;
+}
+
+/*responsive*//*# sourceMappingURL=style.css.map */

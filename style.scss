@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+
+    .logo {
+        .sevilay {
+            max-width: 250px;
+            height: auto;
+        }
+    }
+
+    .navmenu {
+        display: flex;
+
+        // Mobil ve tabletde gizle
+        @media (max-width: 750px) {
+            display: none;
+        }
+
+        .lil {
+            .hom {
+                color: #2c2c2c;
+                font-size: 16px;
+                text-transform: capitalize;
+                padding: 10px 20px;
+                font-weight: 400;
+                transition: all .42s ease;
+
+                &:hover {
+                    color: #ee1c47;
+                }
+            }
+        }
+    }
+
+    .nav-icon {
+        display: flex;
+        align-items: center;
+        .icn {
+            margin-right: 20px;
+            color: #2c2c2c;
+            font-size: 25px;
+            font-weight: 400;
+            transition: all .42s ease;
+            &:hover {
+                transform: scale(1.1);
+                color: #ee1c47;
+            }
+        }
+    }
+
+    // Mobil ve tabletde burger menü simgesini göster
+    #menu-icon {
+        font-size: 35px;
+        color: #2c2c2c;
+        z-index: 10001;
+        cursor: pointer;
+
+        @media (min-width: 751px) {
+            display: none; // Desktop için menü simgesini gizle
+        }
+    }
+
+    // Mobil ve tabletde açıldığında navmenü öğelerini göster
+    @media (max-width: 750px) {
+        &.open {
+            .navmenu {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background: #edfff1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 120px 30px;
+                transition: all .42s;
+
+                .lil {
+                    .hom {
+                        display: block;
+                        margin: 18px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.main-home {
+    position: relative;
+    padding: 15% 10%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/tirnak.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+
+    /* Overlay */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8); /* Beyaz overlay */
+    }
+
+    .main-text {
+        position: relative;
+        z-index: 1;
+        .hhh {
+            color: #ee1c47;
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+        .hh {
+            color: #000;
+            font-size: 65px;
+            text-transform: capitalize;
+            line-height: 1.1;
+            font-weight: 600;
+            margin: 6px 0 10px;
+        }
+        .pp {
+            color: #333c56;
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .main-btn {
+            display: inline-block;
+            color: #111;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+            border: 2px solid #111;
+            padding: 12px 25px;
+            transition: all .42s ease;
+            &:hover {
+                background-color: palevioletred;
+                color: #fff;
+            }
+        }
+    }
+}
+
+header.sticky{
+    background: #fff;
+    padding: 2px 3%;
+    box-shadow:0px 0px 10px rgb(0 0 0 / 10%) ;
+}
+
+/*tranding secton scss*/
+.trending-product{
+
+    .center-text{
+
+        .tre{
+            color:#111 ;
+            font-size: 28px;
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 30px;
+            .span{
+                color: #ee1c47;
+            }
+        }
+    }
+}
+
+
+
+.card-section {
+    display: grid;
+    grid-template-columns: 1fr; // Mobil için tek sütunlu
+    gap: 20px;
+    padding: 20px 10%;
+  
+    // Tablet ve üzeri için düzenleme
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // Tablet ve üstü için iki sütunlu
+    }
+  
+    // Desktop için düzenleme
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr); // Desktop için iki sütunlu
+    }
+  
+    .card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    //   margin-bottom: 20px; // Kartlar arasına boşluk ekle
+      height: 60vh; // Kartlar ekran yüksekliğini kaplasın
+  
+      &__image {
+        position: relative;
+        overflow: hidden;
+        object-fit: cover; // Tamamen kapla
+        height: 100%; // Kartın yüksekliği
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transition: transform 0.9s ease-in-out;
+        }
+  
+        // Mobil ve tablette hover etkisi
+        @media (hover: hover) and (pointer: fine) {
+          &:hover img {
+            transform: scale(1.1);
+          }
+        }
+      }
+  
+     
+  
+      &--1,
+      &--2,
+      &--3,
+      &--4 {
+        // İlgili kartların özel stilleri burada belirtilebilir
+      }
+    }
+  
+    // Desktop için 2 sıra alt alta
+    @media (min-width: 1024px) {
+      .card:nth-child(n + 3) {
+        grid-row: 2;
+      }
+    }
+  }
+
+
+
+
+
+
+  .client-reviews{
+    background-color: #f3f4f6;
+
+    .reviews{
+        text-align: center;
+        .has3{
+            color: #111;
+            font-size: 25px;
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: 700;
+        }
+        .cliee{
+            width: 100px;
+            height: auto;
+            border-radius: 50px;
+            margin: 10px 0;
+        }
+        .lorem{
+            color: #707070;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+        .has2{
+           font-size: 22px; 
+           color: #000;
+           font-weight: 400;
+           text-transform: capitalize;
+           margin-bottom: 2px;
+        }
+    }
+  }
+
+
+
+  .contact{
+    background-color: #f3f4f6;
+    .contact-info{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+        gap:3rem ;
+
+        .first-info{
+            .contactimg{
+                width: 140px;
+                height: auto;
+            }
+            .social-icon{
+                .ah{
+                    color:#565656;
+                margin-right: 10px;
+                font-size: 20px;
+                transition: all .42s;
+               
+                }
+            }
+        }
+
+        .hasss{
+            color: #212529;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .slk{
+            color: #565656;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: capitalize;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all .42s;
+
+            &:hover{
+                color: #ee1c47;
+            }
+        }
+    }
+  }
+
+
+  .end-text{
+    background-color: #edfff1;
+    text-align: center;
+    padding: 20px;
+    .kurme{
+        color: #111;
+        text-transform: capitalize;
+
+    }
+  }
+
+
+
+  /*responsive*/
+
+  
