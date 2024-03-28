@@ -355,6 +355,54 @@ header.sticky{
 
 
 
+
+  .gallery {
+    width: 100%;
+    height: 100vh; /* Ekranı tamamen kapla */
+    display: flex;
+
+    &__left,
+    &__right {
+        flex: 1; /* Eşit genişlikte iki bölüm oluştur */
+        overflow: hidden; /* Taşan içerikler gizlensin */
+
+        img {
+            width: 100%;
+            height: 100%; /* İçeriği tamamen kapla */
+            object-fit: cover; /* Fotoğrafların boşluk bırakmadan sığması için */
+            transition: transform 0.5s ease; /* Transform özelliği için geçiş efekti */
+            &:hover {
+                transform: scale(1.1); /* Üzerine gelindiğinde yavaşça zoom yap */
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            flex: 1; /* Her fotoğraf eşit miktarda alan kaplasın */
+            margin-bottom: 10px; /* Mobil ve tablet boyutlarında fotoğraflar arasında boşluk bırak */
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column; /* Tablet boyutlarında dikey düzene geç */
+        &__right {
+            img {
+                margin-bottom: 0; /* Mobil ve tablet boyutlarında fotoğraflar arasında boşluk bırakma */
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
   /*responsive*/
 
   

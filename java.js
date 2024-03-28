@@ -14,3 +14,9 @@ menu.onclick = () => {
 
 // Mobilde menü varsayılan olarak gizlenmiş olacak
 // navmenu.classList.add('closed');
+document.addEventListener("DOMContentLoaded", function() {
+    const animatedTexts = document.querySelectorAll('.animated-text');
+    animatedTexts.forEach(text => {
+      text.classList.add('animate');
+    });
+  });

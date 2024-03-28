@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -291,6 +292,41 @@ header.sticky {
 .end-text .kurme {
   color: #111;
   text-transform: capitalize;
+}
+
+.gallery {
+  width: 100%;
+  height: 100vh; /* Ekranı tamamen kapla */
+  display: flex;
+}
+.gallery__left, .gallery__right {
+  flex: 1; /* Eşit genişlikte iki bölüm oluştur */
+  overflow: hidden; /* Taşan içerikler gizlensin */
+}
+.gallery__left img, .gallery__right img {
+  width: 100%;
+  height: 100%; /* İçeriği tamamen kapla */
+  object-fit: cover; /* Fotoğrafların boşluk bırakmadan sığması için */
+  transition: transform 0.5s ease; /* Transform özelliği için geçiş efekti */
+}
+.gallery__left img:hover, .gallery__right img:hover {
+  transform: scale(1.1); /* Üzerine gelindiğinde yavaşça zoom yap */
+}
+.gallery__right {
+  display: flex;
+  flex-direction: column;
+}
+.gallery__right img {
+  flex: 1; /* Her fotoğraf eşit miktarda alan kaplasın */
+  margin-bottom: 10px; /* Mobil ve tablet boyutlarında fotoğraflar arasında boşluk bırak */
+}
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column; /* Tablet boyutlarında dikey düzene geç */
+  }
+  .gallery__right img {
+    margin-bottom: 0; /* Mobil ve tablet boyutlarında fotoğraflar arasında boşluk bırakma */
+  }
 }
 
 /*responsive*//*# sourceMappingURL=style.css.map */
